@@ -1,0 +1,30 @@
+# Server configuration
+server:
+  port: 8090
+  
+  
+# Server Url
+http:
+  server:
+    deploy : "http://wx.10086.cn"
+    local: "http://test.10086.cn"
+
+  
+# JWT
+jwt:
+  header: Authorization
+  secret: mySecret
+  expiration: 604800
+  tokenHead: "Bearer "
+  route:
+    authentication:
+      path: auth
+      refresh: refresh
+      register: "auth/register"
+
+# Logging configuration
+logging:
+  level:
+    org.springframework:
+      data: DEBUG
+      security: DEBUG
